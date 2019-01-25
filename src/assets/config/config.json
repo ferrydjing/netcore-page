@@ -1,0 +1,199 @@
+{
+    "config":[
+        {
+            "name": "status",
+            "icon": "switcher",
+            "mode": 1
+        },
+        {
+            "name": "network",
+            "mode": null,
+            "children": [
+                {
+                    "name": "access",
+                    "display": 0
+                },
+                {
+                    "name": "mobile",
+                    "display": 0
+                },
+                {
+                    "name": "wan"
+                },
+                {
+                    "name": "lan"
+                },
+                {
+                    "name": "iptv"
+                },
+                {
+                    "name": "address_reservation"
+                },
+                {
+                    "name": "opmode"
+                }
+            ]
+        },
+        {
+            "name": "ipv6",
+            "mode": null,
+            "children": [
+                {
+                    "name": "ipv6_status"
+                },
+                {
+                    "name": "ipv6_configure"
+                },
+                {
+                    "name": "ipv6_filter"
+                }
+            ]
+        },
+        {
+            "name": "wireless",
+            "mode": null,
+            "children": [
+                {"name": "base"},
+                {"name": "wl_mac_filter"},
+                {"name": "wps"},
+                {"name": "multiple_ssid"},
+                {"name": "advance"},
+                {"name": "list"},
+                {"name": "list_nei"}
+            ]
+        },
+        {
+            "name": "wireless5g",
+            "mode": null,
+            "children": [
+                {"name": "base5g"},
+                {"name": "wl_mac_filter5g"},
+                {"name": "wps5g"},
+                {"name": "multiple_ssid5g"},
+                {"name": "advance5g"},
+                {"name": "list5g"},
+                {"name": "list5g_nei"}
+            ]
+        },
+        {
+            "name": "management",
+            "mode": null,
+            "children": [
+                {"name":"ip_filter"},
+                {"name":"mac_filter"},
+                {"name":"dns_filter"},
+                {"name":"access_list"},
+                {"name":"SPI"}
+            ]
+        },
+        {
+            "name": "qos",
+            "mode": 1
+        },
+        {
+            "name": "forward",
+            "mode": null,
+            "children": [
+                {"name":"virtual"},
+                {"name":"dmz"},
+                {"name":"upnp"},
+                {"name":"portTrigger"},
+                {"name":"ftp"}
+            ]
+        },
+        {
+            "name": "ddns",
+            "mode": 1
+        },
+        {
+            "name": "advanced",
+            "mode": null,
+            "children": [
+                {"name":"igmp"},
+                {"name":"vpn"},
+                {"name":"wakeup"},
+                {"name":"arp_list"},
+                {"name":"routing"},
+                {"name":"interface_mode"},
+                {"name":"snmp"},
+                {"name":"port_mirror"}
+            ]
+        },
+        {
+            "name": "misc",
+            "mode": null,
+            "children": [
+                {"name":"update"},
+                {"name":"backup"},
+                {"name":"diagnostic"},
+                {"name":"remote"},
+                {"name":"sys_time"},
+                {"name":"passwd"},
+                {"name":"statistics"},
+                {"name":"sys_log"},
+                {"name":"reboot"},
+                {"name":"schedule_reboot"},
+                {"name":"default"}
+            ]
+        }
+    ],
+    "module": {
+        "status": {
+            "status_l2tp": [
+                {"name":"wan_l2tp_ip", "type":"simple_context"},
+                {"name":"wan_l2tp_mask", "type":"simple_context"},
+                {"name":"wan_l2tp_gateway", "type":"simple_context"}
+            ],
+            "status_pptp": [
+                {"name":"wan_pptp_ip","type":"simple_context"},
+                {"name":"wan_pptp_mask","type":"simple_context"},
+                {"name":"wan_pptp_gateway","type":"simple_context"}
+            ],
+            "status_wan": [
+                {"name":"wan_connect_type","type":"simple_context"},
+                {"name":"wan_mac_addr","type":"simple_context"},
+                {"name":"wan_ip","type":"simple_context"},
+                {"name":"wan_mask","type":"simple_context"},
+                {"name":"wan_gateway","type":"simple_context"},
+                {"name":"dns_primary","type":"simple_context"},
+                {"name":"dns_secondary","type":"simple_context"},
+                {"name":"wan_pppoe_second_ip","type":"simple_context"},
+                {"name":"wan_pppoe_second_mask","type":"simple_context"},
+                {"name":"wan_connect_status","type":"simple_context","btn":true}
+            ],
+            "status_lan": [
+                {"name":"lan_mac_addr","type":"simple_context"},
+                {"name":"lan_ip","type":"simple_context"},
+                {"name":"lan_mask","type":"simple_context"},
+                {"name":"lan_dhcp_type","type":"simple_context","after":true}
+            ],
+            "status_wireless": [
+                {"name":"wl_enable","type":"simple_context"},
+                {"name":"wl_ssid","type":"simple_context"},
+                {"name":"wl_mode","type":"simple_context"},
+                {"name":"wl_sec_mode","type":"simple_context"},
+                {"name":"wl_channel","type":"simple_context"},
+                {"name":"wl_mac_addr","type":"simple_context"},
+                {"name":"wl_wps_enable","type":"simple_context"}
+            ],
+            "status_wireless5g": [
+                {"name":"wl_enable5g","type":"simple_context"},
+                {"name":"wl_ssid5g","type":"simple_context"},
+                {"name":"wl_mode5g","type":"simple_context"},
+                {"name":"wl_sec_mode5g","type":"simple_context"},
+                {"name":"wl_channel5g","type":"simple_context"},
+                {"name":"wl_mac_addr5g","type":"simple_context"},
+                {"name":"wl_wps_enable5g","type":"simple_context"}
+            ],
+            "status_mobile": [
+                {"name":"usb_status","type":"simple_context"},
+                {"name":"usb_modem","type":"simple_context","btn":true},
+                {"name":"ip_addr","type":"simple_context"},
+                {"name":"mobile_mask","type":"simple_context"},
+                {"name":"gateway","type":"simple_context"},
+                {"name":"pri_dns","type":"simple_context"},
+                {"name":"sec_dns","type":"simple_context"}
+            ]
+        }
+    }
+}
